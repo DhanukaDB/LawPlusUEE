@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Signup extends AppCompatActivity {
 
@@ -20,8 +20,8 @@ public class Signup extends AppCompatActivity {
 
     User userob;
 
-//    FirebaseDatabase rootNode;
-//    DatabaseReference db;
+    FirebaseDatabase rootNode;
+    DatabaseReference db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +60,8 @@ public class Signup extends AppCompatActivity {
 
     public void Signup(View view) {
 
-//        rootNode = FirebaseDatabase.getInstance();
-//        db = rootNode.getReference("User");
+        rootNode = FirebaseDatabase.getInstance();
+        db = rootNode.getReference("User");
 
 
         try {
@@ -83,7 +83,7 @@ public class Signup extends AppCompatActivity {
                 userob.setNic(editTextTextPersonName4.getText().toString().trim());
                 String Nic = editTextTextPersonName4.getText().toString().trim();
 
-//                db.child(Nic).setValue(userob);
+                db.child(Nic).setValue(userob);
 
                 Toast.makeText(getApplicationContext(),"Account Created",Toast.LENGTH_LONG).show();
 
