@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Law Plus</string>
+    <string-array name="question_area">
+        <item>Youth Issues</item>
+        <item>Women</item>
+        <item>Motor Traffic</item>
+    </string-array>
+
+    <string-array name="contact_option">
+        <item>Contact Lawyer</item>
+        <item>Contact Voulenteer</item>
+    </string-array>
+    <string name="addFeedback">Add Feedback</string>
+    <string name="feedback">Law plus helps us have real time communication with customers and coworkers with an ease. It is easy to get help and chat with participants there. It is emerging as a great platform for advertising purposes as well. Law plus helps us stay connected with others over texts and calls, share information etc. If there is end to end encryption, that would be more reliable.</string>
+    <string name="btnContact">Contact QA</string>
+    <string name="btnSupportservice">Support Services</string>
+    <string name="btnDev">Contact DEV</string>
+    <string name="feedbackUserMail">akshat.a@gmail.com</string>
+    <string name="feedbackUserName">Akshat A.</string>
 </resources>
