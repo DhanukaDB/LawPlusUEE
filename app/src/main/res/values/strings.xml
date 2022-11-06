@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Law Plus</string>
+    <string name="VolunteerRequests">Volunteer Requests</string>
+    <string name="btnrequestclientdetails">Request Client Details</string>
+    <string name="tvRequestClientDetails">Request Client Details</string>
+    <string name="tvVolunteername">Volunteer name</string>
+    <string name="tvVolunteerEmail">Volunteer Email</string>
+    <string name="btnSendReply">Send Reply</string>
+    <string name="btnRejectRequest">Reject Request</string>
 
     <string-array name="question_area">
         <item>Youth Issues</item>
@@ -11,8 +18,6 @@
         <item>Contact Lawyer</item>
         <item>Contact Voulenteer</item>
     </string-array>
-
-
 
 
 </resources>

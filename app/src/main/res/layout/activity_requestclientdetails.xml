@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="327dp"
+        android:layout_height="276dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="     Type your Message here"
+        android:inputType="textMultiLine"
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="153dp" />
+
+    <Button
+        android:id="@+id/btnrequestclientdetails"
+        android:layout_width="248dp"
+        android:layout_height="41dp"
+        android:text="@string/btnrequestclientdetails"
+        app:backgroundTint="@color/primarybtn"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="505dp" />
+
+    <TextView
+        android:id="@+id/tvRequestClientDetails"
+        android:layout_width="189dp"
+        android:layout_height="41dp"
+        android:text="@string/tvRequestClientDetails"
+        android:textColor="#0C0C0C"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="57dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
