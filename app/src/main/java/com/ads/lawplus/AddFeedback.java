@@ -1,6 +1,11 @@
 package com.ads.lawplus;
 
-public class AddFeedback {
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class AddFeedback extends AppCompatActivity {
+
     private String name;
     private String email;
     private String feedback;
@@ -36,5 +41,11 @@ public class AddFeedback {
 
     public void setFeedback(String feedback) {
         this.feedback = feedback;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_add_feedback);
     }
 }
