@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "806701953956",
+    "firebase_url": "https://law-plus-3af06-default-rtdb.firebaseio.com",
+    "project_id": "law-plus-3af06",
+    "storage_bucket": "law-plus-3af06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806701953956:android:9aabb480afb37ab5770731",
+        "android_client_info": {
+          "package_name": "com.ads.lawplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806701953956-so0c5hqcemq1mpilk0iqgfnanmv62rgu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ads.lawplus",
+            "certificate_hash": "f872abd39068348157e80630c7d9487808eabd63"
+          }
+        },
+        {
+          "client_id": "806701953956-1lkkjl13bqhr4ie7389vv9bcbrv5iu19.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBguL9nffCjwaAgrf2hWvJ7He7T_dg3X9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "806701953956-1lkkjl13bqhr4ie7389vv9bcbrv5iu19.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

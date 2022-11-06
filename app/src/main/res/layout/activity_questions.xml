@@ -47,6 +47,20 @@
       app:layout_constraintVertical_bias="0.438" />
 
   <TextView
+      android:id="@+id/textView11"
+      android:layout_width="84dp"
+      android:layout_height="35dp"
+      android:text="Body"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.048"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.438" />
+
+  <TextView
       android:id="@+id/textView4"
       android:layout_width="156dp"
       android:layout_height="33dp"
@@ -89,7 +103,7 @@
       app:layout_constraintVertical_bias="0.29" />
 
   <EditText
-      android:id="@+id/Username"
+      android:id="@+id/title"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:ems="10"
@@ -132,7 +146,7 @@
       app:layout_constraintVertical_bias="0.907" />
 
   <EditText
-      android:id="@+id/editTextTextMultiLine4"
+      android:id="@+id/bodyText"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:ems="10"
@@ -146,7 +160,7 @@
       app:layout_constraintVertical_bias="0.444" />
 
   <CheckBox
-      android:id="@+id/checkBox"
+      android:id="@+id/anonymously"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="Publish Anonymously"
