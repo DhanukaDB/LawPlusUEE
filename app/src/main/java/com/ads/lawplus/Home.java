@@ -36,7 +36,7 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                startActivity(new Intent(Home.this, Questions.class));
+                startActivity(new Intent(Home.this, ManageQuestion.class));
             }
         });
 
