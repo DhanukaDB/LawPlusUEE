@@ -35,7 +35,7 @@ public class AddFeedback extends AppCompatActivity implements AdapterView.OnItem
 
         name = findViewById(R.id.editTextName);
         email = findViewById(R.id.editTextEmail);
-        feedback = findViewById(R.id.editTextFeddback);
+        feedback = findViewById(R.id.editTextFeedback);
         btn_feedback = findViewById(R.id.buttonFeedback);
 
         fb = new Feedbacks();
@@ -44,7 +44,7 @@ public class AddFeedback extends AppCompatActivity implements AdapterView.OnItem
 
     public void AddFeedback(View view) {
 
-        database = FirebaseDatabase.getInstance().getReference().child("Questions");
+        database = FirebaseDatabase.getInstance().getReference().child("Feedback");
 
         try {
             if(TextUtils.isEmpty(name.getText().toString().trim())){
@@ -65,7 +65,7 @@ public class AddFeedback extends AppCompatActivity implements AdapterView.OnItem
 
                 Toast.makeText(getApplicationContext(),"Feedback Added",Toast.LENGTH_LONG).show();
 
-                startActivity(new Intent(AddFeedback.this, Feedback.class));
+                startActivity(new Intent(AddFeedback.this, FeedbackList.class));
 
                 ClearControls();
             }
