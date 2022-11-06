@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Home extends AppCompatActivity {
 
-    Button btnbmn,btnque, btnTT, btnHBM, btnBooking;
+    Button btnbmn,btnque;
+    TextView exploretext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,17 @@ public class Home extends AppCompatActivity {
 
 
                 startActivity(new Intent(Home.this, Questions.class));
+            }
+        });
+
+        exploretext = findViewById(R.id.exploretext);
+
+        exploretext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                startActivity(new Intent(Home.this, PublishArticle.class));
             }
         });
 //
