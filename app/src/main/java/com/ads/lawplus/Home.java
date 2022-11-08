@@ -36,20 +36,20 @@ public class Home extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                startActivity(new Intent(Home.this, ManageQuestion.class));
+                startActivity(new Intent(Home.this, ArticleList.class));
             }
         });
 
-        exploretext = findViewById(R.id.exploretext);
-
-        exploretext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                startActivity(new Intent(Home.this, PublishArticle.class));
-            }
-        });
+//        exploretext = findViewById(R.id.exploretext);
+//
+//        exploretext.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//
+//                startActivity(new Intent(Home.this, PublishArticle.class));
+//            }
+//        });
 //
 //        btnTT = findViewById(R.id.btntt);
 //        btnTT.setOnClickListener(new View.OnClickListener() {

@@ -18,6 +18,8 @@
         <activity android:name=".Home" />
         <activity android:name=".Signup" />
         <activity android:name=".PublishArticle" />
+        <activity android:name=".ArticleList" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
