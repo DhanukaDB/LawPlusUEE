@@ -34,25 +34,14 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/busNo"
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
 
-            <TextView
-                android:id="@+id/busfrom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
 
             <TextView
-                android:id="@+id/busto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/bustime"
+                android:id="@+id/bodyText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
@@ -71,11 +60,12 @@
 
                     <Button
                         android:id="@+id/deledit"
-                        android:layout_width="match_parent"
+                        android:layout_width="126dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Edit"
+                        android:text="See Question"
                         android:textColor="#FFFFFF"
+                        app:backgroundTint="@color/secondarybtn"
                         app:cornerRadius="10dp" />
                 </LinearLayout>
 
@@ -90,7 +80,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
-                        android:text="Delete"
+                        app:backgroundTint="@color/primarybtn"
+                        android:text="See Status"
                         android:textColor="#FFFFFF"
                         app:cornerRadius="10dp" />
                 </LinearLayout>

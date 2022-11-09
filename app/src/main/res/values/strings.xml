@@ -12,6 +12,10 @@
         <item>Contact Voulenteer</item>
     </string-array>
 
+    <string name="bodytext">
+        --> Type text here
+    </string>
+
 
 
 

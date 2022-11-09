@@ -82,8 +82,6 @@ public class ManageQuestion extends AppCompatActivity {
     static class ViewHolder {
 
         TextView COL1;
-        TextView COL2;
-        TextView COL3;
         TextView COL4;
         Button button1;
         Button button2;
@@ -112,10 +110,8 @@ public class ManageQuestion extends AppCompatActivity {
                 holder = new ViewHolder();
                 view = inflater.inflate(R.layout.custom_question_details, null);
 
-                holder.COL1 = (TextView) view.findViewById(R.id.busNo);
-                holder.COL2 = (TextView) view.findViewById(R.id.busfrom);
-                holder.COL3 = (TextView) view.findViewById(R.id.busto);
-                holder.COL4 = (TextView) view.findViewById(R.id.bustime);
+                holder.COL1 = (TextView) view.findViewById(R.id.title);
+                holder.COL4 = (TextView) view.findViewById(R.id.bodyText);
                 holder.button1 = (Button) view.findViewById(R.id.deledit);
                 holder.button2 = (Button) view.findViewById(R.id.deldelete);
 
@@ -126,10 +122,8 @@ public class ManageQuestion extends AppCompatActivity {
                 holder = (ViewHolder) view.getTag();
             }
 
-            holder.COL1.setText("Bus No:- "+user.get(position).getTitle());
-            holder.COL2.setText("From:- "+user.get(position).getBody());
-            holder.COL3.setText("To:- "+user.get(position).getArea());
-            holder.COL4.setText("Time:- "+user.get(position).getContactOption());
+            holder.COL1.setText("Title: "+user.get(position).getTitle());
+            holder.COL4.setText("Requested:- "+user.get(position).getContactOption());
             System.out.println(holder);
 
             holder.button2.setOnClickListener(new View.OnClickListener() {
