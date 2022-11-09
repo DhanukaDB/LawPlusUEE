@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/qebg"
     tools:context=".Questions">
 
 
@@ -16,6 +17,7 @@
       app:layout_constraintHorizontal_bias="0.862"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
+      android:background="@drawable/square"
       app:layout_constraintVertical_bias="0.763" />
 
   <TextView
@@ -101,6 +103,7 @@
       app:layout_constraintHorizontal_bias="0.566"
       app:layout_constraintStart_toEndOf="@+id/textView8"
       app:layout_constraintTop_toTopOf="parent"
+
       app:layout_constraintVertical_bias="0.238" />
 
   <Spinner
@@ -112,6 +115,7 @@
       app:layout_constraintHorizontal_bias="0.924"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
+      android:background="@drawable/square"
       app:layout_constraintVertical_bias="0.126" />
 
   <Button
