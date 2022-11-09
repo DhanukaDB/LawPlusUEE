@@ -9,7 +9,6 @@ public class Article {
         this.category = category;
         this.title = title;
         this.body = body;
-        this.category = category;
         this.file = file;
 
     }

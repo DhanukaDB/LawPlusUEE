@@ -84,7 +84,7 @@ public class ArticleList extends AppCompatActivity {
         TextView COL1;
         TextView COL2;
         TextView COL3;
-//        TextView COL4;
+       TextView COL4;
         Button deletebtn;
         Button button2;
     }
@@ -115,7 +115,7 @@ public class ArticleList extends AppCompatActivity {
                 holder.COL1 = (TextView) view.findViewById(R.id.category);
                 holder.COL2 = (TextView) view.findViewById(R.id.title);
                 holder.COL3 = (TextView) view.findViewById(R.id.body);
-//                holder.COL4 = (TextView) view.findViewById(R.id.bustime);
+              holder.COL4 = (TextView) view.findViewById(R.id.bustime);
 //                holder.button1 = (Button) view.findViewById(R.id.deledit);
                holder.deletebtn = (Button) view.findViewById(R.id.deletebtn);
 
@@ -126,10 +126,10 @@ public class ArticleList extends AppCompatActivity {
                 holder = (ViewHolder) view.getTag();
             }
 
-            holder.COL1.setText("Category:- "+user.get(position).getCategory());
-            holder.COL2.setText("Title:- "+user.get(position).getTitle());
-            holder.COL3.setText("Body:- "+user.get(position).getBody());
-//            holder.COL4.setText("Time:- "+user.get(position).getContactOption());
+            holder.COL1.setText("Category: "+user.get(position).getCategory());
+            holder.COL2.setText("Title: "+user.get(position).getTitle());
+            holder.COL3.setText("Body: "+user.get(position).getBody());
+            holder.COL4.setText("Resources: "+user.get(position).getFile());
             System.out.println(holder);
 
 
