@@ -11,19 +11,22 @@ import java.util.ArrayList;
 
 public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.FeedbackViewHolder>{
 
+    private final FeedbackRecyclerViewInterface feedbackRecyclerViewInterface;
+
     Context context;
     ArrayList<Feedbacks> list;
 
-    public FeedbackAdapter(Context context, ArrayList<Feedbacks> list) {
+    public FeedbackAdapter(Context context, ArrayList<Feedbacks> list, FeedbackRecyclerViewInterface feedbackRecyclerViewInterface) {
         this.context = context;
         this.list = list;
+        this.feedbackRecyclerViewInterface = feedbackRecyclerViewInterface;
     }
 
     @NonNull
     @Override
     public FeedbackViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.feedback_item, parent, false);
-        return new FeedbackViewHolder(v);
+        return new FeedbackViewHolder(v, feedbackRecyclerViewInterface);
     }
 
     @Override
@@ -43,11 +46,24 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackAdapter.Feedba
 
         TextView name, email, feedback;
 
-        public FeedbackViewHolder(@NonNull View itemView) {
+        public FeedbackViewHolder(@NonNull View itemView, FeedbackRecyclerViewInterface feedbackRecyclerViewInterface) {
             super(itemView);
             name = itemView.findViewById(R.id.fbName);
             email = itemView.findViewById(R.id.fbEmail);
             feedback = itemView.findViewById(R.id.fb);
+
+            //Attach onClick listener to feedback item view
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(feedbackRecyclerViewInterface != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            feedbackRecyclerViewInterface.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }
