@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
-public class FeedbackList extends AppCompatActivity {
+public class FeedbackList extends AppCompatActivity implements FeedbackRecyclerViewInterface{
 
     RecyclerView recyclerView;
     DatabaseReference database;
@@ -36,7 +34,7 @@ public class FeedbackList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         feedbackList = new ArrayList<>();
-        feedbackAdapter = new FeedbackAdapter(this, feedbackList);
+        feedbackAdapter = new FeedbackAdapter(this, feedbackList, this);
         recyclerView.setAdapter(feedbackAdapter);
 
         database.addValueEventListener(new ValueEventListener(){
@@ -66,5 +64,16 @@ public class FeedbackList extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(FeedbackList.this, Feedback.class);
+
+        intent.putExtra("NAME", feedbackList.get(position).getName());
+        intent.putExtra("EMAIL", feedbackList.get(position).getEmail());
+        intent.putExtra("FEEDBACK", feedbackList.get(position).getFeedback());
+
+        startActivity(intent);
     }
 }
