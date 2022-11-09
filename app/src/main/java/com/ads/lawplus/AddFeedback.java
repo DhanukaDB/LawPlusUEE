@@ -29,7 +29,7 @@ public class AddFeedback extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_feedback);
 
-        database = FirebaseDatabase.getInstance().getReference("Feedback");
+        database = FirebaseDatabase.getInstance().getReference("Feedbacks");
 
         feedbackObj = new Feedbacks();
 
@@ -44,7 +44,7 @@ public class AddFeedback extends AppCompatActivity implements AdapterView.OnItem
 
     public void AddFeedback(View view) {
 
-        database = FirebaseDatabase.getInstance().getReference().child("Feedback");
+        database = FirebaseDatabase.getInstance().getReference().child("Feedbacks");
 
         try {
             if(TextUtils.isEmpty(name.getText().toString().trim())){
