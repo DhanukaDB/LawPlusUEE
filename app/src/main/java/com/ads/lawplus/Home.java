@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class Home extends AppCompatActivity {
 
     Button btnbmn,btnque, btnTT, btnHBM, btnBooking;
-    TextView feedbackTxt;
+    TextView feedbackTxt, exploretext;
 
 
     @Override
@@ -51,13 +51,13 @@ public class Home extends AppCompatActivity {
             }
         });
 
-//        btnTT = findViewById(R.id.btntt);
-//        btnTT.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(home.this, ManageBusTime.class));
-//            }
-//        });
+        exploretext = findViewById(R.id.exploretext);
+        exploretext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, ArticleList.class));
+            }
+        });
 //
 //        btnHBM = findViewById(R.id.btnhbm);
 //        btnHBM.setOnClickListener(new View.OnClickListener() {

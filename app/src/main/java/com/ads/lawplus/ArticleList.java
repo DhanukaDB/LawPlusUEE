@@ -126,9 +126,9 @@ public class ArticleList extends AppCompatActivity {
                 holder = (ViewHolder) view.getTag();
             }
 
-            holder.COL1.setText("Category: "+user.get(position).getCategory());
-            holder.COL2.setText("Title: "+user.get(position).getTitle());
-            holder.COL3.setText("Body: "+user.get(position).getBody());
+            holder.COL1.setText("Category:   "+user.get(position).getCategory());
+            holder.COL2.setText("Title:   "+user.get(position).getTitle());
+            holder.COL3.setText(""+user.get(position).getBody());
             holder.COL4.setText("Resources: "+user.get(position).getFile());
             System.out.println(holder);
 

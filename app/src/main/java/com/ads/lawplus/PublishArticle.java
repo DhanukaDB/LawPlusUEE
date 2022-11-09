@@ -1,5 +1,6 @@
 package com.ads.lawplus;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -37,7 +38,7 @@ public class PublishArticle extends AppCompatActivity {
         body = (EditText) findViewById(R.id.editTextTextPersonName5);
         file = (EditText) findViewById(R.id.editTextTextPersonName6);
 //        btnAdd = (Button) findViewById(R.id.btnAdd);
-        button2 = (Button) findViewById(R.id.button2);
+        button2 = (Button) findViewById(R.id.buttonFeedback);
         button3 = (Button) findViewById(R.id.button3);
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -93,6 +94,7 @@ public class PublishArticle extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(PublishArticle.this, "Data added successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(PublishArticle.this, ArticleList.class));
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -115,10 +117,10 @@ public class PublishArticle extends AppCompatActivity {
             body.setError("This field is required");
             return false;
         }
-        if (file.length() == 0) {
-            file.setError("This field is required");
-            return false;
-        }
+//        if (file.length() == 0) {
+//            file.setError("This field is required");
+//            return false;
+//        }
 
         // after all validation return true.
         return true;
