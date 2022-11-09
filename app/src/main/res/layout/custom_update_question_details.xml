@@ -14,7 +14,7 @@
         android:layout_margin="10dp"
         android:ems="10"
         android:hint="Title"
-        android:inputType="textPersonName" />
+        android:inputType="textMultiLine" />
 
     <EditText
         android:id="@+id/bodyText"
@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:ems="10"
-        android:hint="Body"
-        android:inputType="textPersonName" />
+        android:hint="Question Body"
+        android:inputType="textMultiLine" />
 
 
     <Button
@@ -31,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Update Details"
+        android:text="Update Question"
+        app:backgroundTint="@color/primarybtn"
         app:cornerRadius="15dp" />
 </LinearLayout>
