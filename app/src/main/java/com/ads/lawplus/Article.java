@@ -1,15 +1,16 @@
 package com.ads.lawplus;
 
 public class Article {
-    String category, title, body ,file;
+    String category, title, body ,file,id;
 
     Article(){}
 
-    public Article(String category, String title, String body, String file ) {
+    public Article(String category, String title, String body, String file, String id ) {
         this.category = category;
         this.title = title;
         this.body = body;
         this.file = file;
+        this.id = id;
 
     }
 
@@ -44,4 +45,11 @@ public class Article {
     public void setFile(String file) {
         this.file = file;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+   return id; }
 }

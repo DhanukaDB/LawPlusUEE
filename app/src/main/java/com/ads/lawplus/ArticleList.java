@@ -86,7 +86,7 @@ public class ArticleList extends AppCompatActivity {
         TextView COL3;
        TextView COL4;
         Button deletebtn;
-        Button button2;
+        Button button1;
     }
 
     class MyAdapter extends ArrayAdapter<Article> {
@@ -116,7 +116,7 @@ public class ArticleList extends AppCompatActivity {
                 holder.COL2 = (TextView) view.findViewById(R.id.title);
                 holder.COL3 = (TextView) view.findViewById(R.id.body);
               holder.COL4 = (TextView) view.findViewById(R.id.bustime);
-//                holder.button1 = (Button) view.findViewById(R.id.deledit);
+               holder.button1 = (Button) view.findViewById(R.id.editbtn);
                holder.deletebtn = (Button) view.findViewById(R.id.deletebtn);
 
 
@@ -144,7 +144,7 @@ public class ArticleList extends AppCompatActivity {
                                 public void onClick(DialogInterface dialogInterface, int i) {
 
                                     final String idd = user.get(position).getTitle();
-                                    FirebaseDatabase.getInstance().getReference().child("Articles").child(idd).removeValue();
+                                    FirebaseDatabase.getInstance().getReference("Articles").child(idd).removeValue();
                                     //remove function not written
                                     Toast.makeText(myContext, "Article deleted successfully", Toast.LENGTH_SHORT).show();
 
@@ -185,89 +185,87 @@ public class ArticleList extends AppCompatActivity {
 //                    builder.show();
 //                }
 //            });
+//
+
+            holder.button1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getContext());
+                    View view1 = inflater.inflate(R.layout.update_article, null);
+                    dialogBuilder.setView(view1);
+
+                    final EditText editText1 = (EditText) view1.findViewById(R.id.product_name);
+                    final EditText editText2 = (EditText) view1.findViewById(R.id.product_price);
+                    final EditText editText3 = (EditText) view1.findViewById(R.id.product_brand);
+                    final EditText editText4 = (EditText) view1.findViewById(R.id.product_category);
+
+                    final Button buttonupdate = (Button) view1.findViewById(R.id.btnEdit1);
+
+                    final AlertDialog alertDialog = dialogBuilder.create();
+                    alertDialog.show();
+
+                    final String idd = user.get(position).getId();
+                    final DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Articles");
+                    reference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String category = (String) snapshot.child("category").getValue();
+                            String title = (String) snapshot.child("title").getValue();
+                            String body = (String) snapshot.child("body").getValue();
+                            String file = (String) snapshot.child("file").getValue();
 
 
-//            holder.button1.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getContext());
-//                    View view1 = inflater.inflate(R.layout.custom_question_details, null);
-//                    dialogBuilder.setView(view1);
-//
-//                    final EditText editText1 = (EditText) view1.findViewById(R.id.TTbusNo);
-//                    final EditText editText2 = (EditText) view1.findViewById(R.id.TTstartLocatiojn);
-//                    final EditText editText3 = (EditText) view1.findViewById(R.id.TTEndLocation);
-//                    final EditText editText4 = (EditText) view1.findViewById(R.id.TTtime);
-//                    final EditText editText5 = (EditText) view1.findViewById(R.id.TTdriver);
-//                    final Button buttonupdate = (Button) view1.findViewById(R.id.update);
-//
-//                    final AlertDialog alertDialog = dialogBuilder.create();
-//                    alertDialog.show();
-//
-//                    final String idd = user.get(position).getId();
-//                    final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("TimeDetails").child(idd);
-//                    reference.addValueEventListener(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                            String bnumber = (String) snapshot.child("busNo").getValue();
-//                            String start = (String) snapshot.child("startfrom").getValue();
-//                            String end = (String) snapshot.child("goTo").getValue();
-//                            String time = (String) snapshot.child("time").getValue();
-//                            String driver = (String) snapshot.child("driverName").getValue();
-//
-//                            editText1.setText(bnumber);
-//                            editText2.setText(start);
-//                            editText3.setText(end);
-//                            editText4.setText(time);
-//                            editText5.setText(driver);
-//
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(@NonNull DatabaseError error) {
-//
-//                        }
-//                    });
-//
-//
-//                    buttonupdate.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//
-//                            String busno = editText1.getText().toString();
-//                            String start = editText2.getText().toString();
-//                            String to = editText3.getText().toString();
-//                            String time = editText4.getText().toString();
-//                            String driver = editText5.getText().toString();
-//
-//                           if (busno.isEmpty()) {
-//                                editText1.setError("Bus no is required");
-//                            }else if (start.isEmpty()) {
-//                                editText2.setError("Start location is required");
-//                            }else if (to.isEmpty()) {
-//                                editText3.setError("End location is required");
-//                            }else if (time.isEmpty()) {
-//                                editText4.setError("Time is required");
-//                            }else if (driver.isEmpty()) {
-//                                editText5.setError("Driver name is required");
-//                            }else {
-//
-//                                HashMap map = new HashMap();
-//                                map.put("busNo", busno);
-//                                map.put("startfrom", start);
-//                                map.put("goTo", to);
-//                               map.put("time", time);
-//                               map.put("driverName", driver);
-//                                reference.updateChildren(map);
-//
-//                                Toast.makeText(ManageQuestion.this, "Updated successfully", Toast.LENGTH_SHORT).show();
-//
-//                                alertDialog.dismiss();
-//                            }
-//                        }
-//                    });
-//                }
-//            });
+                            editText1.setText(category);
+                            editText2.setText(title);
+                            editText3.setText(body);
+                            editText4.setText(file);
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+
+                    buttonupdate.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            String category = editText1.getText().toString();
+                            String title = editText2.getText().toString();
+                            String body = editText3.getText().toString();
+                            String file = editText4.getText().toString();
+
+
+                           if (category.isEmpty()) {
+                                editText1.setError("Bus no is required");
+                            }else if (title.isEmpty()) {
+                                editText2.setError("Start location is required");
+                            }else if (body.isEmpty()) {
+                                editText3.setError("End location is required");
+                            }else if (file.isEmpty()) {
+                                editText4.setError("Time is required");
+                            }else {
+
+                                HashMap map = new HashMap();
+                                map.put("category", category);
+                                map.put("title", title);
+                                map.put("body", body);
+                               map.put("file", file);
+
+                                reference.updateChildren(map);
+
+                                Toast.makeText(ArticleList.this, "Updated successfully", Toast.LENGTH_SHORT).show();
+                               startActivity(new Intent(ArticleList.this, Home.class));
+                                alertDialog.dismiss();
+                            }
+                        }
+                    });
+                }
+            });
 
             return view;
 
