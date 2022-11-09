@@ -10,8 +10,9 @@ import android.widget.TextView;
 
 public class Home extends AppCompatActivity {
 
-    Button btnbmn,btnque;
-    TextView exploretext;
+    Button btnbmn,btnque, btnTT, btnHBM, btnBooking;
+    TextView feedbackTxt;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,17 +41,16 @@ public class Home extends AppCompatActivity {
             }
         });
 
-//        exploretext = findViewById(R.id.exploretext);
-//
-//        exploretext.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//
-//                startActivity(new Intent(Home.this, PublishArticle.class));
-//            }
-//        });
-//
+        feedbackTxt = findViewById(R.id.feedbackText);
+
+        feedbackTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(Home.this, AddFeedback.class));
+            }
+        });
+
 //        btnTT = findViewById(R.id.btntt);
 //        btnTT.setOnClickListener(new View.OnClickListener() {
 //            @Override

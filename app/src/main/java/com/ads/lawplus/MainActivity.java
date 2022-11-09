@@ -9,6 +9,7 @@ package com.ads.lawplus;
         import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
+        import android.widget.TextView;
         import android.widget.Toast;
 
         import com.google.firebase.database.DatabaseReference;
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
     Button button;
     Button btnsignin;
-
     User userob;
 
     EditText editTextTextEmailAddress2,editTextTextPassword;
@@ -45,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
         editTextTextEmailAddress2 = findViewById(R.id.editTextTextEmailAddress2);
         editTextTextPassword = findViewById(R.id.editTextTextPassword);
         button.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Signup.class)));
-
-
 
 
     }
@@ -126,11 +124,6 @@ public class MainActivity extends AppCompatActivity {
         editTextTextEmailAddress2.setText("");
         editTextTextPassword.setText("");
 
-
-
-
-
-
     }
     private void saveToDevice(String name, String email, String nic, String mobile, String password) {
         SharedPreferences sharedPref = getSharedPreferences("myPref", MODE_PRIVATE);
@@ -141,15 +134,9 @@ public class MainActivity extends AppCompatActivity {
         sharedPref.edit().putString("password", password).apply();
     }
 
-
-
-
-
     public void ClearControls() {
         editTextTextEmailAddress2.setText("");
         editTextTextPassword.setText("");
-
-
 
     }
 
