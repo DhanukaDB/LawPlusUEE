@@ -15,66 +15,127 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RequestClient extends AppCompatActivity {
 
-    EditText et_volunteerName, et_volunteerEmail, etM_requestBody;
-    Button btn_requestClientDetails;
-    RequestClientDetails requestClientDetails;
+    //declare the all the UI elements
+     EditText etVolunteerName,etVolunteerEmail,etmRequestBody;
+     Button btn_requestClientDetails;
 
-    DatabaseReference database;
+
+    //create a reference for the  Request Client Details class
+    RequestClientDetails requestClientDetailsObj;
+
+    //define database reference
+    DatabaseReference dbRef;
     FirebaseDatabase root;
-    //User userob;
+
+    //declare variable for auto increment
+    //long max_id = 0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requestclientdetails);
-        database = FirebaseDatabase.getInstance().getReference("User");
 
-       // userob = new User();
-        requestClientDetails = new  RequestClientDetails();
+        //find all the UI elements from the interface
 
-        et_volunteerName = findViewById(R.id.et_volunteerName);
-        et_volunteerEmail = findViewById(R.id.et_volunteerEmail);
-        etM_requestBody = findViewById(R.id.etm_requestBody);
+        etVolunteerName = findViewById(R.id.et_volunteerName);
+        etVolunteerEmail = findViewById(R.id.et_volunteerEmail);
+        etmRequestBody = findViewById(R.id.etm_requestBody);
 
 
-        //button direction
         btn_requestClientDetails = findViewById(R.id.btn_requestClientDetails);
-        btn_requestClientDetails.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
 
 
-                startActivity(new Intent(RequestClient.this, Home.class));
 
-                ClearControls();
-            }
-        });
+        //Create an object
+        requestClientDetailsObj = new  RequestClientDetails();
+
     }
-    public void Signup(View view) {
+
+    // Method to clear all user inputs
+    public void ClearControls() {
+        etVolunteerName.setText("");
+        etVolunteerEmail.setText("");
+        etmRequestBody.setText("");
+
+    }
+
+   /* //Set on click listener to the Continue button and start coding to insert
+    public void onClick(View view) {
+        //define a table name using a child method
+        root = FirebaseDatabase.getInstance();
+        dbRef = root.getReference().child("RequestClientDetails");
+
+
+        //Check some validation whether the fields are empty or not
+        if (TextUtils.isEmpty(etVolunteerName.getText().toString()))
+            Toast.makeText(getApplicationContext(), "Please enter Name", Toast.LENGTH_SHORT).show();
+        else if (TextUtils.isEmpty(etVolunteerEmail.getText().toString()))
+            Toast.makeText(getApplicationContext(), "Please enter an Email Address", Toast.LENGTH_SHORT).show();
+        else if (TextUtils.isEmpty(etmRequestBody.getText().toString()))
+            Toast.makeText(getApplicationContext(), "Please Type Message", Toast.LENGTH_SHORT).show();
+        else {
+
+            //Take inputs from the user and assign these values to the request Client Details object
+            requestClientDetailsObj.setVolunteerName(etVolunteerName.getText().toString().trim());
+            requestClientDetailsObj.setVolunteerEmail(etVolunteerEmail.getText().toString().trim());
+            requestClientDetailsObj.setRequestBody(etmRequestBody.getText().toString().trim());
+
+            String V_Name = etVolunteerName.getText().toString().trim();
+            String V_Email = etVolunteerEmail.getText().toString().trim();
+            String V_Request = etmRequestBody.getText().toString().trim();
+
+
+            //pass the values to the database
+            dbRef.child(V_Email).setValue(requestClientDetailsObj);
+
+            //Feedback to the user via Toast message
+            Toast.makeText(getApplicationContext(), "Address saved Successfully", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(),Home.class);
+
+            intent.putExtra("volunteerName", V_Name);
+            intent.putExtra("volunteerEmail",V_Email);
+            intent.putExtra("requestBody",V_Request);
+
+            Toast.makeText(getApplicationContext()," Successfully",Toast.LENGTH_LONG).show();
+
+            startActivity(intent);
+
+
+            ClearControls();
+        }
+
+
+
+    }*/
+
+    public void RequestClient(View view) {
 
         root = FirebaseDatabase.getInstance();
-        database = root.getReference("User");
+        dbRef = root.getReference("RequestClientDetails");
+       // rootNode = FirebaseDatabase.getInstance();
+       // db = rootNode.getReference("User");
 
 
         try {
-            if(TextUtils.isEmpty( et_volunteerName.getText().toString().trim())){
+            if(TextUtils.isEmpty(etVolunteerName.getText().toString().trim())){
                 Toast.makeText(getApplicationContext(),"Enter Your Name",Toast.LENGTH_LONG).show();
-            } else if (TextUtils.isEmpty(et_volunteerEmail.getText().toString().trim())){
+            } else if (TextUtils.isEmpty(etVolunteerEmail.getText().toString().trim())){
                 Toast.makeText(getApplicationContext(),"Enter Your Email",Toast.LENGTH_LONG).show();
-            } else if (TextUtils.isEmpty(etM_requestBody.getText().toString().trim())){
-                Toast.makeText(getApplicationContext(),"Type Requested Details",Toast.LENGTH_LONG).show();
-
+            } else if (TextUtils.isEmpty(etmRequestBody.getText().toString().trim())){
+                Toast.makeText(getApplicationContext(),"Type your Request",Toast.LENGTH_LONG).show();
             } else {
-                requestClientDetails.setVolunteerName(et_volunteerName.getText().toString().trim());
-                requestClientDetails.setVolunteerEmail(et_volunteerEmail.getText().toString().trim());
-                requestClientDetails.setRequestBody(etM_requestBody.getText().toString().trim());
+                requestClientDetailsObj.setVolunteerName(etVolunteerName.getText().toString().trim());
+                requestClientDetailsObj.setVolunteerEmail(etVolunteerEmail.getText().toString().trim());
+                requestClientDetailsObj.setRequestBody(etmRequestBody.getText().toString().trim());
 
+                String volunteerEmail = etVolunteerEmail.getText().toString().trim();
 
-                Toast.makeText(getApplicationContext(),"Send Request to Manager",Toast.LENGTH_LONG).show();
+                dbRef.child(volunteerEmail ).setValue(requestClientDetailsObj);
 
-                startActivity(new Intent(RequestClient.this, MainActivity.class));
+                Toast.makeText(getApplicationContext(),"Request Send Successfully",Toast.LENGTH_LONG).show();
+
+                startActivity(new Intent(RequestClient.this, Home.class));
 
                 ClearControls();
 
@@ -85,11 +146,5 @@ public class RequestClient extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Number Format Exception", Toast.LENGTH_LONG).show();
         }
     }
-    public void ClearControls() {
-        et_volunteerName.setText("");
-        et_volunteerEmail.setText("");
-        etM_requestBody.setText("");
 
-
-    }
 }

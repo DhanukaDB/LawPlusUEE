@@ -37,4 +37,16 @@
     <string name="title_activity_feedback_sucess">FeedbackSucess</string>
     <string name="rateUs">Rate Us</string>
 
+    <string-array name="title_story">
+        <item>Never Sign Anything Without Getting a Copy or Taking a Picture </item>
+        <item>Don’t Admit Liability Until You Talk to an Attorney </item>
+        <item>Get Agreements in Writing </item>
+    </string-array>
+    <string-array name="details_story">
+        <item>Natalie Portman on the beauty of Learning\n\n "I don't love studying.I hate studying.I like learning.Learning is beautiful."-Natalie Portman\n\nMiss Portman loves being a student.How many of you don’t like studying, or get tired of it from time to time?If you can look at learning as a beautiful thing that you are privileged to get, then you might enjoy your education more.</item>
+        <item>Roald Dahl Says Your Smile is the Sun\n\n “If you have good thoughts. They will shine out of your face like sunbeams and you will always look lovely.” –Roald Dahl\n\nIt’s amazing what good thoughts can do to a person. When you think positively, that energy expands from within you.This glow makes you look beautiful, inspires others, and makes you a pleasant person to be around. Your thoughts spread energy; choose happy energy.</item>
+        <item>Albert Einstein on the Power of Dreams\n\n “Never give up on what you really want to do.The person with big dreams is more powerful than one with all the facts. ” –Albert Einstein\n\nIt was a “fact” once that man would never fly in the sky. The Wright brothers had big dreams that went beyond fact in their day and age.If you stay true to what you really want to do, then you will find ways to make it happen. Big dreams work on big magic.</item>
+
+    </string-array>
+
 </resources>
