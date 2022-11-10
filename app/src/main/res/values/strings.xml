@@ -27,4 +27,6 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="userfeedback">User Feedback</string>
+    <string name="title_activity_feedback_sucess">FeedbackSucess</string>
+    <string name="rateUs">Rate Us</string>
 </resources>
