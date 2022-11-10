@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VolunteerRequest">
+
+
+    <TextView
+        android:id="@+id/tvVolunteerRequests"
+        android:layout_width="236dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="36dp"
+        android:text="Volunteer Requests"
+        android:textColor="#020202"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvVolunteername"
+        android:layout_width="227dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVolunteerRequests" />
+
+    <TextView
+        android:id="@+id/tvVolunteerEmail"
+        android:layout_width="225dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Volunteer Email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVolunteername" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine2"
+        android:layout_width="324dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVolunteerEmail" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine3"
+        android:layout_width="328dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="     Type your Reply here"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.301"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="265dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:text="Send Reply"
+        app:backgroundTint="@color/primarybtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine3" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="266dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:text="Reject Request"
+        app:backgroundTint="#E11212"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
