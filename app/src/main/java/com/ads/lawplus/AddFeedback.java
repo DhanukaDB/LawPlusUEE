@@ -65,7 +65,7 @@ public class AddFeedback extends AppCompatActivity implements AdapterView.OnItem
 
                 Toast.makeText(getApplicationContext(),"Feedback Added",Toast.LENGTH_LONG).show();
 
-                startActivity(new Intent(AddFeedback.this, FeedbackList.class));
+                startActivity(new Intent(AddFeedback.this, FeedbackSuccess.class));
 
                 ClearControls();
             }
