@@ -143,7 +143,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
                 qdet.setBody(bodyText.getText().toString().trim());
                 qdet.setContactOption(spinner1.getSelectedItem().toString().trim());
                 String Title = title.getText().toString().trim();
-                qdet.setAnswer("");
+                qdet.setAnswer("Not Answered");
                 qdet.setUsername("");
 
 
@@ -168,7 +168,7 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
 //
 //                startActivity(intent);
 
-                startActivity(new Intent(Questions.this, Home.class));
+                startActivity(new Intent(Questions.this, ManageQuestion.class));
 
                 ClearControls();
             }

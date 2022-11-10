@@ -46,8 +46,8 @@ public class Home extends AppCompatActivity {
         feedbackTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                startActivity(new Intent(Home.this, AddFeedback.class));
+                
+                startActivity(new Intent(Home.this, FeedbackList.class));
             }
         });
 

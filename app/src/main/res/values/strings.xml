@@ -10,6 +10,13 @@
         <item>Contact Lawyer</item>
         <item>Contact Voulenteer</item>
     </string-array>
+
+    <string name="bodytext">
+        --> Type text here
+    </string>
+
+    <string name="delButton">Delete Question</string>
+
     <string name="addFeedback">Add Feedback</string>
     <string name="feedback">Law plus helps us have real time communication with customers and coworkers with an ease. It is easy to get help and chat with participants there. </string>
     <string name="btnContact">Contact QA</string>
@@ -26,4 +33,9 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="userfeedback">User Feedback</string>
+    <string name="title_activity_feedback_sucess">FeedbackSucess</string>
+    <string name="rateUs">Rate Us</string>
+
+
 </resources>
