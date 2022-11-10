@@ -82,8 +82,6 @@ public class ManageQuestion extends AppCompatActivity {
     static class ViewHolder {
 
         TextView COL1;
-        TextView COL2;
-        TextView COL3;
         TextView COL4;
         Button button1;
         Button button2;
@@ -112,10 +110,8 @@ public class ManageQuestion extends AppCompatActivity {
                 holder = new ViewHolder();
                 view = inflater.inflate(R.layout.custom_question_details, null);
 
-                holder.COL1 = (TextView) view.findViewById(R.id.busNo);
-                holder.COL2 = (TextView) view.findViewById(R.id.busfrom);
-                holder.COL3 = (TextView) view.findViewById(R.id.busto);
-                holder.COL4 = (TextView) view.findViewById(R.id.bustime);
+                holder.COL1 = (TextView) view.findViewById(R.id.title);
+                holder.COL4 = (TextView) view.findViewById(R.id.bodyText);
                 holder.button1 = (Button) view.findViewById(R.id.deledit);
                 holder.button2 = (Button) view.findViewById(R.id.deldelete);
 
@@ -126,25 +122,23 @@ public class ManageQuestion extends AppCompatActivity {
                 holder = (ViewHolder) view.getTag();
             }
 
-            holder.COL1.setText("Bus No:- "+user.get(position).getTitle());
-            holder.COL2.setText("From:- "+user.get(position).getBody());
-            holder.COL3.setText("To:- "+user.get(position).getArea());
-            holder.COL4.setText("Time:- "+user.get(position).getContactOption());
+            holder.COL1.setText("Title: "+user.get(position).getTitle());
+            holder.COL4.setText("Body:- "+user.get(position).getBody());
             System.out.println(holder);
 
             holder.button2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     final AlertDialog alertDialog = new AlertDialog.Builder(getContext())
-                            .setTitle("Do you want to delete this item?")
+                            .setTitle("Do you want to delete question?")
                             .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
 
                                     final String idd = user.get(position).getTitle();
-                                    FirebaseDatabase.getInstance().getReference("TimeDetails").child(idd).removeValue();
+                                    FirebaseDatabase.getInstance().getReference("Questions").child(idd).removeValue();
                                     //remove function not written
-                                    Toast.makeText(myContext, "Item deleted successfully", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(myContext, "Question deleted successfully", Toast.LENGTH_SHORT).show();
 
                                 }
                             })
@@ -159,87 +153,87 @@ public class ManageQuestion extends AppCompatActivity {
                 }
             });
 
-//            holder.button1.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getContext());
-//                    View view1 = inflater.inflate(R.layout.custom_question_details, null);
-//                    dialogBuilder.setView(view1);
-//
-//                    final EditText editText1 = (EditText) view1.findViewById(R.id.TTbusNo);
-//                    final EditText editText2 = (EditText) view1.findViewById(R.id.TTstartLocatiojn);
+            holder.button1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getContext());
+                    View view1 = inflater.inflate(R.layout.custom_update_question_details, null);
+                    dialogBuilder.setView(view1);
+
+                    final EditText editText1 = (EditText) view1.findViewById(R.id.title);
+                    final EditText editText2 = (EditText) view1.findViewById(R.id.bodyText);
 //                    final EditText editText3 = (EditText) view1.findViewById(R.id.TTEndLocation);
 //                    final EditText editText4 = (EditText) view1.findViewById(R.id.TTtime);
 //                    final EditText editText5 = (EditText) view1.findViewById(R.id.TTdriver);
-//                    final Button buttonupdate = (Button) view1.findViewById(R.id.update);
-//
-//                    final AlertDialog alertDialog = dialogBuilder.create();
-//                    alertDialog.show();
-//
-//                    final String idd = user.get(position).getId();
-//                    final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("TimeDetails").child(idd);
-//                    reference.addValueEventListener(new ValueEventListener() {
-//                        @Override
-//                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                            String bnumber = (String) snapshot.child("busNo").getValue();
-//                            String start = (String) snapshot.child("startfrom").getValue();
-//                            String end = (String) snapshot.child("goTo").getValue();
+                    final Button buttonupdate = (Button) view1.findViewById(R.id.update);
+
+                    final AlertDialog alertDialog = dialogBuilder.create();
+                    alertDialog.show();
+
+                    final String idd = user.get(position).getTitle();
+                    final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("TimeDetails").child(idd);
+                    reference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String title = (String) snapshot.child("title").getValue();
+                            String body = (String) snapshot.child("body").getValue();
+                           String answer = (String) snapshot.child("answer").getValue();
 //                            String time = (String) snapshot.child("time").getValue();
 //                            String driver = (String) snapshot.child("driverName").getValue();
-//
-//                            editText1.setText(bnumber);
-//                            editText2.setText(start);
+
+                            editText1.setText(title);
+                            editText2.setText(body);
 //                            editText3.setText(end);
 //                            editText4.setText(time);
 //                            editText5.setText(driver);
-//
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(@NonNull DatabaseError error) {
-//
-//                        }
-//                    });
-//
-//
-//                    buttonupdate.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//
-//                            String busno = editText1.getText().toString();
-//                            String start = editText2.getText().toString();
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+
+                    buttonupdate.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            String title = editText1.getText().toString();
+                            String body = editText2.getText().toString();
 //                            String to = editText3.getText().toString();
 //                            String time = editText4.getText().toString();
 //                            String driver = editText5.getText().toString();
-//
-//                           if (busno.isEmpty()) {
-//                                editText1.setError("Bus no is required");
-//                            }else if (start.isEmpty()) {
-//                                editText2.setError("Start location is required");
+
+                           if (title.isEmpty()) {
+                                editText1.setError("Bus no is required");
+                            }else if (body.isEmpty()) {
+                                editText2.setError("Start location is required");
 //                            }else if (to.isEmpty()) {
 //                                editText3.setError("End location is required");
 //                            }else if (time.isEmpty()) {
 //                                editText4.setError("Time is required");
 //                            }else if (driver.isEmpty()) {
 //                                editText5.setError("Driver name is required");
-//                            }else {
-//
-//                                HashMap map = new HashMap();
-//                                map.put("busNo", busno);
-//                                map.put("startfrom", start);
+                            }else {
+
+                                HashMap map = new HashMap();
+                                map.put("title", title);
+                                map.put("body", body);
 //                                map.put("goTo", to);
 //                               map.put("time", time);
 //                               map.put("driverName", driver);
 //                                reference.updateChildren(map);
-//
-//                                Toast.makeText(ManageQuestion.this, "Updated successfully", Toast.LENGTH_SHORT).show();
-//
-//                                alertDialog.dismiss();
-//                            }
-//                        }
-//                    });
-//                }
-//            });
+
+                                Toast.makeText(ManageQuestion.this, "Updated successfully", Toast.LENGTH_SHORT).show();
+
+                                alertDialog.dismiss();
+                            }
+                        }
+                    });
+                }
+            });
 
             return view;
 
