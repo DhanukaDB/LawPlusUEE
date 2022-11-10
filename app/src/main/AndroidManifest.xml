@@ -48,6 +48,9 @@
         <activity android:name=".FeedbackList" />
         <activity android:name=".AddFeedback" />
         <activity android:name=".Feedback" />
+        <activity android:name=".PublishArticle" />
+        <activity android:name=".ArticleList" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
