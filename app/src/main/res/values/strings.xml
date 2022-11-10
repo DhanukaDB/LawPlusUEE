@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Law Plus</string>
+
     <string-array name="question_area">
         <item>Youth Issues</item>
         <item>Women</item>
@@ -10,21 +11,16 @@
         <item>Contact Lawyer</item>
         <item>Contact Voulenteer</item>
     </string-array>
-    <string name="addFeedback">Add Feedback</string>
-    <string name="feedback">Law plus helps us have real time communication with customers and coworkers with an ease. It is easy to get help and chat with participants there. </string>
-    <string name="btnContact">Contact QA</string>
-    <string name="btnSupportservice">Support Services</string>
-    <string name="btnDev">Contact DEV</string>
-    <string name="feedbackUserMail">akshat.a@gmail.com</string>
-    <string name="feedbackUserName">Akshat A.</string>
-    <string name="title_activity_user_feedbacks">UserFeedbacks</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="userfeedback">User Feedback</string>
+    <string name="bodytext">
+        --> Type text here
+    </string>
+
+    <string name="delButton">Delete Question</string>
+    <string name="tvRequestClientDetails">Request Client Details</string>
+    <string name="btnrequestclientdetails">Request Client Details</string>
+
+
+
+
 </resources>
