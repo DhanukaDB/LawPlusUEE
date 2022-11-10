@@ -12,5 +12,19 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <!--non selected rating bar color -->
+        <item name="colorControlNormal">#4D000000</item>
+        <!--selected rating bar color -->
+        <item name="colorControlActivated">@color/rateDialogBox1</item>
     </style>
+
+    <style name="Theme.LawPlus.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.LawPlus.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.LawPlus.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
