@@ -1,4 +1,4 @@
-# LawPlusUEE
+# LawPlus Android App
 Y3S2 UEE project
 
 ### **GROUP MEMBERS**
