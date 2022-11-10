@@ -10,4 +10,5 @@ Y3S2 UEE project
 
 # TOOLS & TECHNOLOGIES
 Android Studio - java
+
 Database - Firebase
