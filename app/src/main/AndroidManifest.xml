@@ -12,6 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LawPlus"
         tools:targetApi="31">
+
+        <activity
+            android:name=".VolunteerRequestsList"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".Tips"
             android:exported="false">
@@ -51,7 +59,6 @@
         <activity android:name=".Feedback" />
         <activity android:name=".PublishArticle" />
         <activity android:name=".ArticleList" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">

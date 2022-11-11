@@ -8,27 +8,29 @@
 
     <EditText
         android:id="@+id/etm_requestBody"
-        android:layout_width="326dp"
-        android:layout_height="173dp"
+        android:layout_width="334dp"
+        android:layout_height="176dp"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="     Type your Message here"
         android:inputType="textMultiLine"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <Button
         android:id="@+id/btn_requestClientDetails"
-        android:layout_width="258dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="230dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="56dp"
+        android:onClick="RequestClientDetails"
         android:text="@string/btnrequestclientdetails"
-        app:backgroundTint="@color/primarybtn"
+        app:backgroundTint="@color/secondarybtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etm_requestBody" />
 
@@ -36,12 +38,13 @@
         android:id="@+id/tvRequestClientDetails"
         android:layout_width="263dp"
         android:layout_height="41dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
         android:text="@string/tvRequestClientDetails"
         android:textColor="#0C0C0C"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,25 +52,25 @@
         android:id="@+id/textView14"
         android:layout_width="143dp"
         android:layout_height="35dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
         android:text="Request Body:"
         android:textColor="#0C0C0C"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="103dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="105dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="56dp"
         android:text="Name:"
         android:textColor="#0C0C0C"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/et_volunteerName"
-        app:layout_constraintHorizontal_bias="0.657"
+        app:layout_constraintHorizontal_bias="0.789"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvRequestClientDetails" />
 
@@ -80,7 +83,7 @@
         android:textColor="#0C0C0C"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/et_volunteerEmail"
-        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintHorizontal_bias="0.781"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -92,6 +95,7 @@
         android:ems="10"
         android:hint="Volunteer Name"
         android:inputType="textPersonName"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -101,8 +105,9 @@
         android:layout_height="59dp"
         android:layout_marginEnd="36dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Volunteer Email"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
