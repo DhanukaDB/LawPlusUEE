@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class Home extends AppCompatActivity {
 
     Button btnbmn,btnque, btnTT, btnHBM, btnBooking;
-    TextView feedbackTxt, exploretext;
+    TextView feedbackTxt, exploretext,accountText;
 
 
     @Override
@@ -58,14 +58,14 @@ public class Home extends AppCompatActivity {
                 startActivity(new Intent(Home.this, ArticleList.class));
             }
         });
-//
-//        btnHBM = findViewById(R.id.btnhbm);
-//        btnHBM.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(home.this, HireActivity.class));
-//            }
-//        });
+
+        accountText = findViewById(R.id.accountText);
+        accountText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, UserProfile.class));
+            }
+        });
 //
 //        btnBooking = findViewById(R.id.btnDoneBookings);
 //        btnBooking.setOnClickListener(new View.OnClickListener() {

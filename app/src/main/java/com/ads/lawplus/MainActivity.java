@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
                         String nicFromDB = dataSnapshot.child(enteredUsername).child("nic").getValue(String.class);
 
 
-                        Intent intent = new Intent(getApplicationContext(),Questions.class);
-                        Intent intent1 = new Intent(getApplicationContext(),Questions.class);
+                        Intent intent = new Intent(getApplicationContext(),Home.class);
+                        Intent intent1 = new Intent(getApplicationContext(),UserProfile.class);
 
 
                         intent.putExtra("name",nameFromDB);
