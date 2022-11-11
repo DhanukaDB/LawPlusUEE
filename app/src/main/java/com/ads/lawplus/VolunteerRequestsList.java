@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ads.lawplus.ManageQuestion.MyAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,12 +25,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class VolunteerRequestsList extends AppCompatActivity {
     Button button;
     ListView listView;
-    List<Questiondetails> user;
+    List<RequestClientDetails> user;
     DatabaseReference ref;
 
     @Override
@@ -59,11 +61,13 @@ public class VolunteerRequestsList extends AppCompatActivity {
                 for (DataSnapshot studentDatasnap : dataSnapshot.getChildren()) {
 
                     RequestClientDetails RequestClientDetails = studentDatasnap.getValue(RequestClientDetails.class);
-                    //user.add(RequestClientDetails);
+                    user.add(RequestClientDetails);
                 }
 
                 //VolunteerRequestsList.MyRequestAdapter adapter = new VolunteerRequestsList().MyRequestAdapter(VolunteerRequestsList.this, R.layout.activity_volunteer_request, (ArrayList<RequestClientDetails>) user);
                 //listView.setAdapter(adapter);
+                MyAdapter adapter = new MyAdapter(VolunteerRequestsList.this, R.layout.activity_volunteer_request, (ArrayList<RequestClientDetails>) user);
+                listView.setAdapter(adapter);
 
             }
 
@@ -84,12 +88,12 @@ public class VolunteerRequestsList extends AppCompatActivity {
     }
 
 
-    class MyRequestAdapter extends ArrayAdapter<RequestClientDetails> {
+    class MyAdapter extends ArrayAdapter<RequestClientDetails> {
         LayoutInflater inflater;
         Context myContext;
         List<RequestClientDetails> user;
 
-        public MyRequestAdapter(Context context, int resource, ArrayList<RequestClientDetails> objects) {
+        public MyAdapter(Context context, int resource, ArrayList<RequestClientDetails> objects) {
             super(context, resource, objects);
             myContext = context;
             user = objects;
@@ -151,6 +155,8 @@ public class VolunteerRequestsList extends AppCompatActivity {
                 }
 
             });
+
+
             return view;
 
 

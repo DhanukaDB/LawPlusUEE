@@ -99,15 +99,15 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/rateNow"
-                    android:layout_marginStart="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="Rate Now"
-                    android:textAllCaps="true"
-                    android:textColor="#FFFFFF"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/round_back_blue"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
-                    android:background="@drawable/round_back_blue"/>
+                    android:text="Rate Now"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

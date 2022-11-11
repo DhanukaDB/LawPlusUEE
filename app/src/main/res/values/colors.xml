@@ -9,7 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primarybtn">#2196F3</color>
     <color name="secondarybtn">#757575</color>
-    <color name="deletebtn">#640D0D</color>
+    <color name="deletebtn">#e12e2a</color>
     <color name="rateDialogBox1">#FDD736</color>
     <color name="rateDialogBox2">#385796</color>
+    <color name="txtclr">#0A0A0A</color>
+
 </resources>

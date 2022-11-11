@@ -141,7 +141,7 @@ public class RequestClient extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(),"Message Send Successfully",Toast.LENGTH_LONG).show();
 
-                startActivity(new Intent(RequestClient.this, MainActivity.class));
+                startActivity(new Intent(RequestClient.this, VolunteerRequestsList.class));
 
                 ClearControls();
 

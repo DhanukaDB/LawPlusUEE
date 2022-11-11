@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UserProfile extends AppCompatActivity {
 
-    Button button4,button8,reqdet;
+    Button button4,button8,reqdet,tips;
 
     TextView editTextTextPersonName2,editTextTextPersonName3,editTextTextPersonName5,editTextTextPersonName6,editTextTextPersonName7;
 
@@ -63,6 +63,14 @@ public class UserProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(UserProfile.this, RequestClient.class));
+            }
+        });
+
+        tips = findViewById(R.id.tips);
+        tips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(UserProfile.this, LawTipsHome.class));
             }
         });
 
