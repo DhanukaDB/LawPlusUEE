@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Feedback">
 
     <Button
@@ -11,17 +12,15 @@
         android:layout_width="244dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="28dp"
         android:text="@string/btnContact"
         android:textAllCaps="true"
         app:backgroundTint="@color/primarybtn"
         app:layout_constraintBottom_toTopOf="@+id/btnSupportService"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnSupportService"
@@ -29,7 +28,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="28dp"
         android:text="@string/btnSupportservice"
         android:textAllCaps="true"
         app:backgroundTint="@color/primarybtn"
@@ -44,7 +43,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginBottom="144dp"
         android:text="@string/btnDev"
         android:textAllCaps="true"
         app:backgroundTint="@color/primarybtn"
@@ -66,47 +65,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="371dp"
-        android:layout_height="159dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnContact"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <TextView
+        android:id="@+id/txtFeedbackUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/feedbackUserName"
+        app:layout_constraintBottom_toTopOf="@+id/txtFeedbackUserMail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFeedback"
-        app:layout_constraintVertical_bias="0.518">
+        app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
-            android:id="@+id/txtFeedbackUser"
-            android:layout_width="398dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/feedbackUserName"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+    <TextView
+        android:id="@+id/txtFeedbackUserMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/feedbackUserMail"
+        app:layout_constraintBottom_toTopOf="@+id/txtUserFeedback"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/txtFeedbackUserMail"
-            android:layout_width="391dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/feedbackUserMail"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+    <TextView
+        android:id="@+id/txtUserFeedback"
+        android:layout_width="252dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="364dp"
+        android:text="Feedback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/txtUserFeedback"
-            android:layout_width="316dp"
-            android:layout_height="66dp"
-            android:layout_margin="20dp"
-            android:text="@string/feedback"
-            android:textColor="@color/purple_700" />
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
