@@ -1,5 +1,6 @@
 package com.ads.lawplus;
 
+/*
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,8 +17,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RequestClient extends AppCompatActivity {
 
     //declare the all the UI elements
-     EditText etVolunteerName,etVolunteerEmail,etmRequestBody;
-     Button btn_requestClientDetails;
+    EditText etVolunteerName, etVolunteerEmail, etmRequestBody;
+    Button btn_requestClientDetails;
 
 
     //create a reference for the  Request Client Details class
@@ -46,9 +47,8 @@ public class RequestClient extends AppCompatActivity {
         btn_requestClientDetails = findViewById(R.id.btn_requestClientDetails);
 
 
-
         //Create an object
-        requestClientDetailsObj = new  RequestClientDetails();
+        requestClientDetailsObj = new RequestClientDetails();
 
     }
 
@@ -60,82 +60,88 @@ public class RequestClient extends AppCompatActivity {
 
     }
 
-   /* //Set on click listener to the Continue button and start coding to insert
-    public void onClick(View view) {
-        //define a table name using a child method
-        root = FirebaseDatabase.getInstance();
-        dbRef = root.getReference().child("RequestClientDetails");
+
+}
+
+*/
 
 
-        //Check some validation whether the fields are empty or not
-        if (TextUtils.isEmpty(etVolunteerName.getText().toString()))
-            Toast.makeText(getApplicationContext(), "Please enter Name", Toast.LENGTH_SHORT).show();
-        else if (TextUtils.isEmpty(etVolunteerEmail.getText().toString()))
-            Toast.makeText(getApplicationContext(), "Please enter an Email Address", Toast.LENGTH_SHORT).show();
-        else if (TextUtils.isEmpty(etmRequestBody.getText().toString()))
-            Toast.makeText(getApplicationContext(), "Please Type Message", Toast.LENGTH_SHORT).show();
-        else {
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-            //Take inputs from the user and assign these values to the request Client Details object
-            requestClientDetailsObj.setVolunteerName(etVolunteerName.getText().toString().trim());
-            requestClientDetailsObj.setVolunteerEmail(etVolunteerEmail.getText().toString().trim());
-            requestClientDetailsObj.setRequestBody(etmRequestBody.getText().toString().trim());
+import androidx.appcompat.app.AppCompatActivity;
 
-            String V_Name = etVolunteerName.getText().toString().trim();
-            String V_Email = etVolunteerEmail.getText().toString().trim();
-            String V_Request = etmRequestBody.getText().toString().trim();
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+public class RequestClient extends AppCompatActivity {
 
-            //pass the values to the database
-            dbRef.child(V_Email).setValue(requestClientDetailsObj);
+    EditText etVolunteerName, etVolunteerEmail, etmRequestBody;
+    Button btn_requestClientDetails;
 
-            //Feedback to the user via Toast message
-            Toast.makeText(getApplicationContext(), "Address saved Successfully", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(),Home.class);
+    //create a reference for the  Request Client Details class
+    RequestClientDetails requestClientDetailsObj;
 
-            intent.putExtra("volunteerName", V_Name);
-            intent.putExtra("volunteerEmail",V_Email);
-            intent.putExtra("requestBody",V_Request);
+    //define database reference
 
-            Toast.makeText(getApplicationContext()," Successfully",Toast.LENGTH_LONG).show();
+    FirebaseDatabase rootNode;
+    DatabaseReference db;
 
-            startActivity(intent);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_requestclientdetails);
 
+        //find all the UI elements from the interface
 
-            ClearControls();
-        }
-
+        etVolunteerName = findViewById(R.id.et_volunteerName);
+        etVolunteerEmail = findViewById(R.id.et_volunteerEmail);
+        etmRequestBody = findViewById(R.id.etm_requestBody);
 
 
-    }*/
+        btn_requestClientDetails = findViewById(R.id.btn_requestClientDetails);
 
-    public void RequestClient(View view) {
 
-        root = FirebaseDatabase.getInstance();
-        dbRef = root.getReference("RequestClientDetails");
-       // rootNode = FirebaseDatabase.getInstance();
-       // db = rootNode.getReference("User");
+        //Create an object
+        requestClientDetailsObj = new RequestClientDetails();
+
+
+
+
+
+
+    }
+
+    public void RequestClientDetails(View view) {
+
+        rootNode = FirebaseDatabase.getInstance();
+        db = rootNode.getReference("RequestClientDetails");
 
 
         try {
             if(TextUtils.isEmpty(etVolunteerName.getText().toString().trim())){
-                Toast.makeText(getApplicationContext(),"Enter Your Name",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Enter Volunteer Name",Toast.LENGTH_LONG).show();
             } else if (TextUtils.isEmpty(etVolunteerEmail.getText().toString().trim())){
-                Toast.makeText(getApplicationContext(),"Enter Your Email",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Enter Volunteer Email",Toast.LENGTH_LONG).show();
             } else if (TextUtils.isEmpty(etmRequestBody.getText().toString().trim())){
-                Toast.makeText(getApplicationContext(),"Type your Request",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Type Request Message",Toast.LENGTH_LONG).show();
             } else {
                 requestClientDetailsObj.setVolunteerName(etVolunteerName.getText().toString().trim());
                 requestClientDetailsObj.setVolunteerEmail(etVolunteerEmail.getText().toString().trim());
                 requestClientDetailsObj.setRequestBody(etmRequestBody.getText().toString().trim());
 
-                String volunteerEmail = etVolunteerEmail.getText().toString().trim();
+                String Name = etVolunteerName.getText().toString().trim();
 
-                dbRef.child(volunteerEmail ).setValue(requestClientDetailsObj);
+                db.child(Name).setValue(requestClientDetailsObj);
 
-                Toast.makeText(getApplicationContext(),"Request Send Successfully",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Message Send Successfully",Toast.LENGTH_LONG).show();
 
-                startActivity(new Intent(RequestClient.this, Home.class));
+                startActivity(new Intent(RequestClient.this, MainActivity.class));
 
                 ClearControls();
 
@@ -147,4 +153,13 @@ public class RequestClient extends AppCompatActivity {
         }
     }
 
+    public void ClearControls() {
+        etVolunteerName.setText("");
+        etVolunteerEmail.setText("");
+        etmRequestBody.setText("");
+
+    }
+
 }
+
+
